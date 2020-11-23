@@ -1,25 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+import  React  from 'react';
+import  HomeScreen  from './components/homeScreen.js';
+import OnePost from './components/OnePost/showOnePost.js'
+import OneTopic from './components/Posts/oneTopic.js'
+import Login from './components/login.js'
+import Navi from './components/nav.js'
+import {Container,Row,Col , Form, Button} from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link} from "react-router-dom";
+import './main.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+
+
+
+function App(){
+    
+    
+    
+return(
+  
+            <Router>
+              
+            <Navi></Navi> 
+            <Container>
+                  <main>
+                
+                    <Switch>
+                       
+                    
+                      <Route exact path="/posts/:id" component={OnePost}></Route>   
+                      <Route exact path="/" component={HomeScreen}></Route>   
+                      <Route exact path="/login" component={Login}></Route>   
+                      <Route exact path="/:topics" component={OneTopic}></Route>   
+                      
+                      
+
+                    </Switch>
+                </main>        
+                </Container>
+            </Router>
+            
+            
+            
+    )
+    
 }
-
-export default App;
+  
+  
+export default App
