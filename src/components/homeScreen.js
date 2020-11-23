@@ -16,14 +16,14 @@ function HomeScreen(){
     
 return(
     <div >
-                <img src={require(`../img/новости.jpg`).default} className="bg" alt=""/>
+                <img src={require(`../img/news.jpg`).default} className="bg" alt=""/>
             <h2 className="section-title">Последние новости в мире </h2>
                     <section className="section-wrapper">
           
           
             {
             OnlyNew.map(item=>{
-                return <SinglePost data={item}></SinglePost>
+                return <SinglePost key={item.id} data={item}></SinglePost>
                 
 
             })

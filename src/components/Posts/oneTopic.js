@@ -72,16 +72,18 @@ return(
 
             <img src={require(`../../img/${topic}.jpg`).default} className="bg" alt=""/>
 
-            <h2 className="section-title">Последние новости из раздела {topic} </h2>
+          <h2 className="section-title">Последние новости в данном разделе</h2>
           <section className="section-wrapper">
                  {OneTopic.map(item=>{
                     return <SinglePost key={item.id} data={item}></SinglePost>
                 })} 
          </section>
-           <h2 className="section-title">Добавьте  новость в раздел  {topic} </h2>
+
+           <h2 className="section-title">Добавьте  новость в этот раздел </h2>
           <section className="section-wrapper">
                 <AddPost AddNewPost={AddNewPost} handleInput={handleInput}></AddPost>  
           </section>
+
           </>)
           : <h1 className="py-5 text-center text-uppercase">данной категории не существует</h1>
 

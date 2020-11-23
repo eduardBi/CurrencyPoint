@@ -77,7 +77,7 @@ export default function AddComent (state=Reviews,action){
     switch(action.type){
             case"AddComent":
             
-            return [...state,{...action.payload,id:Reviews.length+1,img:2}];
+            return [...state,{...action.payload,id:state.length+1,img:2}];
 
             case"clear":
             ////возвращаю  в первоначальное состояние после выхода из аккаунта
