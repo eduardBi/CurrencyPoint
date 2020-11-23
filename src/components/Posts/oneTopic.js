@@ -64,13 +64,13 @@ function OneTopic(props){
 return(
     <div >
 
-          
+<img src={require(`../../img/${topic}.jpg`).default} className="bg" alt=""/>
               
         {OneTopic.length>0?(
             <>
 
 
-            <img src={require(`../../img/${topic}.jpg`).default} className="bg" alt=""/>
+            
 
           <h2 className="section-title">Последние новости в данном разделе</h2>
           <section className="section-wrapper">

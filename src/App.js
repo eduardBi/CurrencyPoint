@@ -3,6 +3,7 @@ import  HomeScreen  from './components/homeScreen.js';
 import OnePost from './components/OnePost/showOnePost.js'
 import OneTopic from './components/Posts/oneTopic.js'
 import Login from './components/login.js'
+import F0F from './components/404.js'
 import Navi from './components/nav.js'
 import {Container,Row,Col , Form, Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -38,7 +39,7 @@ return(
                       <Route exact path="/" component={HomeScreen}></Route>   
                       <Route exact path="/login" component={Login}></Route>   
                       <Route exact path="/:topics" component={OneTopic}></Route>   
-                      
+                      <Route   component={F0F}></Route>   
                       
 
                     </Switch>
