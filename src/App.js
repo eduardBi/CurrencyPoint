@@ -1,57 +1,36 @@
 import  React  from 'react';
-import  HomeScreen  from './components/homeScreen.js';
-import OnePost from './components/OnePost/showOnePost.js'
-import OneTopic from './components/Posts/oneTopic.js'
-import Login from './components/login.js'
-import F0F from './components/404.js'
-import Navi from './components/nav.js'
-import {Container,Row,Col , Form, Button} from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link} from "react-router-dom";
-import './main.css'
+import Currency from './components/currencyInfo/currencyList'
+import CurrencyCalc from './components/currencyCalculator.js/currencyCalculator'
+import HeaderNav from './components/main/header'
+import Footer from './components/main/footer'
+import Wellcome from './components/main/welcome'
+import './index.css'
+
+      
+import { Switch, Route } from 'react-router-dom'
 
 
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
+const App:React.FC =()=>{
+       
+ return (
+     <div>
+     
+     <HeaderNav></HeaderNav>
+     <main>
+        <Switch>
+                <Route exact path='/currency' component={Currency}/>
+                <Route exact path='/currency/calculator' component={CurrencyCalc}/>
+                <Route exact path='/' component={Wellcome}/>
+        </Switch>
+     </main>   
+     
 
-
-
-function App(){
-    
-    
-    
-return(
-  
-            <Router>
-              
-            <Navi></Navi> 
-            <Container>
-                  <main>
-                
-                    <Switch>
-                       
-                    
-                      <Route exact path="/posts/:id" component={OnePost}></Route>   
-                      <Route exact path="/" component={HomeScreen}></Route>   
-                      <Route exact path="/login" component={Login}></Route>   
-                      <Route exact path="/:topics" component={OneTopic}></Route>   
-                      <Route   component={F0F}></Route>   
-                      
-
-                    </Switch>
-                </main>        
-                </Container>
-            </Router>
-            
-            
-            
-    )
-    
+     <Footer></Footer>
+     </div>
+ 
+ )
 }
-  
-  
-export default App
+
+
+export default App;
